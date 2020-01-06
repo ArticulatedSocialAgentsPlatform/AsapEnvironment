@@ -22,11 +22,13 @@ import asap.rsbworldenvironment.Rsbworldenvironment.RSBWorldObjects;
 import com.google.common.primitives.Floats;
 /**
  * Manages world objects that are sent from an external rendering environment through rsb.
+ * (note that this class has been suffixed with an arbitrary letter 'C' to differentiate it from the auto-generated protobuf generatedsrc/Rsbworldenvironment.java file)
+ * 
  * @author hvanwelbergen
  * 
  */
 @Slf4j
-public class RsbWorldEnvironment implements ClockListener, Environment
+public class RsbWorldEnvironmentC implements ClockListener, Environment
 {
     private final WorldObjectManager woManager;
 
@@ -38,7 +40,7 @@ public class RsbWorldEnvironment implements ClockListener, Environment
     @Setter
     private String id = "";
 
-    public RsbWorldEnvironment(WorldObjectManager wm)
+    public RsbWorldEnvironmentC(WorldObjectManager wm)
     {
         woManager = wm;
         DefaultConverterRepository.getDefaultConverterRepository().addConverter(new ProtocolBufferConverter<>(RSBWorldObjects.getDefaultInstance()));

@@ -43,7 +43,7 @@ public class RsbWorldEnvironmentTest
     public void before() throws InitializeException
     {
         DefaultConverterRepository.getDefaultConverterRepository().addConverter(new ProtocolBufferConverter<>(RSBWorldObjects.getDefaultInstance()));
-        informer = factory.createInformer(RsbWorldEnvironment.SCENEINFO_SCOPE);
+        informer = factory.createInformer(RsbWorldEnvironmentC.SCENEINFO_SCOPE);
         try {
             informer.activate();
         } catch (RSBException e) {
@@ -60,7 +60,7 @@ public class RsbWorldEnvironmentTest
     @Test
     public void test() throws InterruptedException, RSBException
     {
-        new RsbWorldEnvironment(mockWoManager);
+        new RsbWorldEnvironmentC(mockWoManager);
         informer.publish(RSBWorldObjects.newBuilder()
                      .addWorldObjects(RSBWorldObject.newBuilder().setObjectId("camera").addAllPosition(Floats.asList(1,1,1)).build())
                      .addWorldObjects(RSBWorldObject.newBuilder().setObjectId("ent 2").addAllPosition(Floats.asList(1,1,1)).build())
@@ -73,7 +73,7 @@ public class RsbWorldEnvironmentTest
     @Test
     public void testPos()throws InterruptedException, RSBException
     {
-        new RsbWorldEnvironment(woManager);
+        new RsbWorldEnvironmentC(woManager);
         informer.publish(RSBWorldObjects.newBuilder()
                 .addWorldObjects(RSBWorldObject.newBuilder().setObjectId("camera").addAllPosition(Floats.asList(0.12f, 0.12f, 0f)).build())
                 .addWorldObjects(RSBWorldObject.newBuilder().setObjectId("ent 2").addAllPosition(Floats.asList(0,0,2)).build())
@@ -92,7 +92,7 @@ public class RsbWorldEnvironmentTest
     {
         WorldObject ent1 = new VJointWorldObject(new VJoint("ent1"));
         woManager.addWorldObject("ent 1", ent1);
-        new RsbWorldEnvironment(woManager);
+        new RsbWorldEnvironmentC(woManager);
         
         informer.publish(RSBWorldObjects.newBuilder()
                 .addWorldObjects(RSBWorldObject.newBuilder().setObjectId("ent 1").addAllPosition(Floats.asList(0.1f,0.2f,2f)).build())
