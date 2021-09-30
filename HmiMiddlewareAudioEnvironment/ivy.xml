@@ -1,0 +1,27 @@
+<ivy-module version="2.0">
+   <info organisation="HMI" module="HmiMiddlewareAudioEnvironment" />
+   <dependencies>
+      <dependency org="slf4j"   name="slf4j-api"         rev="latest.release"  /> 
+      <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.12.4"/>
+      <dependency org="org.apache.commons" name="commons-lang3" rev="3.12.0"/>
+      <dependency org="Asap" name="AsapAudioEngine" rev="latest.${resolve.status}"/>
+      <dependency org="HMI" name="HmiMiddlewareAbstractionLayer" rev="latest.alpha" />
+   <!--
+      <dependency org="HMI"     name="HmiUtil"           rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiXml"            rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiAnimation"            rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiFaceAnimation"            rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiFaceEmbodiments"            rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiAnimation"            rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiAnimationEmbodiments"  rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiWorldObjectEnvironment"  rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="HmiEnvironmentBase"  rev="latest.${resolve.status}"    />
+      <dependency org="HMI"     name="AsapBodyAndFaceEmbodiments"  rev="latest.${resolve.status}"    />
+      <dependency org="HMI" name="HmiMiddlewareAbstractionLayer" rev="latest.${resolve.status}"/>
+
+      <dependency org="google"  name="guava"             rev="latest.release"    />
+      <dependency org="lombok"  name="lombok"            rev="latest.release"    />
+      <dependency org="jcip"    name="jcip-annotations"  rev="latest.release"  />
+      -->
+   </dependencies>
+</ivy-module>
